@@ -1,6 +1,69 @@
 @ProjetoMidasAPI_HostAddress = http://localhost:5059
+@BearerToken = COLE_SEU_TOKEN
 
-GET {{ProjetoMidasAPI_HostAddress}}/weatherforecast/
+### Listar transacoes
+GET {{ProjetoMidasAPI_HostAddress}}/Transactions?type=PROJECTED
+Authorization: Bearer {{BearerToken}}
 Accept: application/json
 
-###
+### Criar lancamento manual realizado
+POST {{ProjetoMidasAPI_HostAddress}}/Transactions
+Authorization: Bearer {{BearerToken}}
+Content-Type: application/json
+
+{
+  "type": "REALIZED",
+  "amount": 150.75,
+  "date": "2026-03-22",
+  "description": "Mercado",
+  "category": "Alimentacao"
+}
+
+### Criar recorrencia mensal
+POST {{ProjetoMidasAPI_HostAddress}}/Transactions
+Authorization: Bearer {{BearerToken}}
+Content-Type: application/json
+
+{
+  "amount": 1200,
+  "date": "2026-04-05",
+  "description": "Aluguel",
+  "category": "Moradia",
+  "recurrence": {
+    "frequency": "MONTHLY",
+    "occurrences": 6,
+    "monthlyMode": "FIXED_DAY",
+    "dayOfMonth": 5
+  }
+}
+
+### Confirmar transacao
+POST {{ProjetoMidasAPI_HostAddress}}/Transactions/1/confirm
+Authorization: Bearer {{BearerToken}}
+Content-Type: application/json
+
+### Criar emprestimo
+POST {{ProjetoMidasAPI_HostAddress}}/Transactions/loans
+Authorization: Bearer {{BearerToken}}
+Content-Type: application/json
+
+{
+  "totalAmount": 10000,
+  "interestRate": 12,
+  "numberOfInstallments": 12,
+  "firstInstallmentDate": "2026-04-10",
+  "description": "Emprestimo capital de giro",
+  "category": "Credito"
+}
+
+### Confirmar emprestimo
+POST {{ProjetoMidasAPI_HostAddress}}/Transactions/loans/00000000-0000-0000-0000-000000000000/confirm
+Authorization: Bearer {{BearerToken}}
+Content-Type: application/json
+
+{
+  "createInboundTransaction": true,
+  "receivedAt": "2026-03-22",
+  "inboundDescription": "Valor recebido do emprestimo",
+  "inboundCategory": "Entrada de credito"
+}

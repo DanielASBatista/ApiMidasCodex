@@ -163,7 +163,7 @@ namespace ProjetoMidasAPI.Controllers
         public async Task<ActionResult<Usuario>> GetUsuario(int id)
         {
             var usuario = await _context.Usuarios
-            .Include(u => u.Lancamentos)
+            .Include(u => u.Transactions)
             .FirstOrDefaultAsync(u => u.IdUsuario == id);
 
             if (usuario == null)

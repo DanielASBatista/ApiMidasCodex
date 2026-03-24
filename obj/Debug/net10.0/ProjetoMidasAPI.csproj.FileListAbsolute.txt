@@ -654,3 +654,11 @@ D:\Repositórios\VisualStudioCode\MidasApi\MidasApi\obj\Debug\net10.0\refint\Pro
 D:\Repositórios\VisualStudioCode\MidasApi\MidasApi\obj\Debug\net10.0\ProjetoMidasAPI.pdb
 D:\Repositórios\VisualStudioCode\MidasApi\MidasApi\obj\Debug\net10.0\ProjetoMidasAPI.genruntimeconfig.cache
 D:\Repositórios\VisualStudioCode\MidasApi\MidasApi\obj\Debug\net10.0\ref\ProjetoMidasAPI.dll
+D:\Repositórios\VisualStudioCode\MidasApi\build-temp\appsettings.Development.json
+D:\Repositórios\VisualStudioCode\MidasApi\build-temp\appsettings.json
+D:\Repositórios\VisualStudioCode\MidasApi\build-temp\ProjetoMidasAPI.staticwebassets.endpoints.json
+D:\Repositórios\VisualStudioCode\MidasApi\build-temp\ProjetoMidasAPI.exe
+D:\Repositórios\VisualStudioCode\MidasApi\build-temp\ProjetoMidasAPI.deps.json
+D:\Repositórios\VisualStudioCode\MidasApi\build-temp\ProjetoMidasAPI.runtimeconfig.json
+D:\Repositórios\VisualStudioCode\MidasApi\build-temp\ProjetoMidasAPI.dll
+D:\Repositórios\VisualStudioCode\MidasApi\build-temp\ProjetoMidasAPI.pdb

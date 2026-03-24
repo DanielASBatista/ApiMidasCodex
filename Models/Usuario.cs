@@ -21,6 +21,7 @@ public class Usuario
     public List<Projecao> Projecoes { get; set; } = new();
     public List<Emprestimo> Emprestimos { get; set; } = new();
     public List<Recorrencia> Recorrencias { get; set; } = new();
+    public List<Transaction> Transactions { get; set; } = new();
 
     [Required] // Id da empresa associada ao usuário. Campo obrigatório.
     public int IdEmpresa { get; set; } 

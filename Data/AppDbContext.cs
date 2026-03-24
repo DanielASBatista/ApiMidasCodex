@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using ProjetoMidasAPI.Models;
+using ProjetoMidasAPI.Models.Enuns;
 using ProjetoMidasAPI_Final.Models;
 using ProjetoMidasAPI_Final.Models.Enuns;
 using ProjetoMidasAPI_Final.Utils;
@@ -21,6 +22,7 @@ namespace ProjetoMidasAPI.Data
         public DbSet<Empresa> Empresas {get; set;} = null!;
         public DbSet<Responsavel> Responsaveis {get; set;} = null!;
         public DbSet<Usuario> Usuarios { get; set; } = null!;
+        public DbSet<Transaction> Transactions { get; set; } = null!;
         
         // É aqui o OnModelCreating
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -72,7 +74,27 @@ namespace ProjetoMidasAPI.Data
                 .WithOne(r => r.Usuario)
                 .HasForeignKey(r => r.IdUsuario)
                 .OnDelete(DeleteBehavior.Restrict);
-            
+
+            modelBuilder.Entity<Transaction>().ToTable("Transactions");
+            modelBuilder.Entity<Transaction>().HasKey(t => t.Id);
+            modelBuilder.Entity<Transaction>()
+                .HasOne(t => t.Usuario)
+                .WithMany(u => u.Transactions)
+                .HasForeignKey(t => t.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Transaction>()
+                .Property(t => t.Type)
+                .HasConversion<string>();
+
+            modelBuilder.Entity<Transaction>()
+                .Property(t => t.Status)
+                .HasConversion<string>();
+
+            modelBuilder.Entity<Transaction>()
+                .Property(t => t.Origin)
+                .HasConversion<string>();
+
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<TipoRecorrencia>().HasData(

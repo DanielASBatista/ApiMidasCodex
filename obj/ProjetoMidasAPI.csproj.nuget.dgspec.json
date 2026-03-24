@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Repositórios\\VisualStudioCode\\MidasApi\\MidasApi\\ProjetoMidasAPI.csproj": {}
+    "D:\\Repositórios\\VisualStudioCode\\MidasApi\\midasapi\\ProjetoMidasAPI.csproj": {}
   },
   "projects": {
-    "D:\\Repositórios\\VisualStudioCode\\MidasApi\\MidasApi\\ProjetoMidasAPI.csproj": {
+    "D:\\Repositórios\\VisualStudioCode\\MidasApi\\midasapi\\ProjetoMidasAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Repositórios\\VisualStudioCode\\MidasApi\\MidasApi\\ProjetoMidasAPI.csproj",
+        "projectUniqueName": "D:\\Repositórios\\VisualStudioCode\\MidasApi\\midasapi\\ProjetoMidasAPI.csproj",
         "projectName": "ProjetoMidasAPI",
-        "projectPath": "D:\\Repositórios\\VisualStudioCode\\MidasApi\\MidasApi\\ProjetoMidasAPI.csproj",
+        "projectPath": "D:\\Repositórios\\VisualStudioCode\\MidasApi\\midasapi\\ProjetoMidasAPI.csproj",
         "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
-        "outputPath": "D:\\Repositórios\\VisualStudioCode\\MidasApi\\MidasApi\\obj\\",
+        "outputPath": "D:\\Repositórios\\VisualStudioCode\\MidasApi\\midasapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\danie\\AppData\\Roaming\\NuGet\\NuGet.Config"
