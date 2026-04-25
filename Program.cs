@@ -41,16 +41,15 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll",
+    options.AddPolicy("Frontend",
         policy =>
         {
             policy
-    .AllowAnyOrigin()
-    .AllowAnyHeader()
-    .AllowAnyMethod();
+                .WithOrigins("https://interface-midas-codex.vercel.app")
+                .AllowAnyHeader()
+                .AllowAnyMethod();
         });
 });
-
 var app = builder.Build();
 
 
@@ -67,7 +66,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseRouting();
-app.UseCors("AllowAll");
+app.UseCors("Frontend");
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
